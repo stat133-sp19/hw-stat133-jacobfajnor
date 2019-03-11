@@ -2,11 +2,11 @@
 
 Private Repository for HW assignments of Stat 133 (Spring 2019)
 
-- Name: Your name (first last)
-- Github username: usrname
-- Email: address [at] email.com
-- Lab section: 101
-- GSI: Leia Organa
+- Name: Jacob Fajnor
+- Github username: jacobfajnor
+- Email: jacobfajnor [at] berkeely.edu
+- Lab section: 112
+- GSI: Shuni Li
 
 -----
 
