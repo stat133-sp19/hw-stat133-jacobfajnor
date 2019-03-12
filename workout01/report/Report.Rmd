@@ -1,0 +1,22 @@
+---
+title: "Workout 1"
+author: "Jacob Fajnor"
+output: github_document
+---
+```{r}
+setwd("C:/Users/Fajnor/Desktop/workout01")
+library(dplyr)
+shot_data <- read.csv("./data/shots-data.csv", header = TRUE, stringsAsFactors = FALSE)
+# Tables of Effective shooting Percentage.
+shot_data$made <- ifelse(shot_data$shot_made_flag == "shot_yes", 1, 0)
+shot_data$taken <- ifelse(shot_data$shot_made_flag == "shot_yes", 1, 1)
+
+two_point_percent <- shot_data %>% group_by(name) %>% filter(shot_type == "2PT Field Goal") %>% summarize(total = sum(taken), made = sum(made), perc_made = (sum(made)/sum(taken))*100)
+
+three_point_percent <- shot_data %>% group_by(name) %>% filter(shot_type == "3PT Field Goal") %>% summarize(total = sum(taken), made = sum(made), perc_made = (sum(made)/sum(taken))*100)
+
+total_point_percent <- shot_data %>% group_by(name) %>% filter(shot_type == "2PT Field Goal" | shot_type == "3PT Field Goal") %>% summarize(total = sum(taken), made = sum(made), perc_made = (sum(made)/sum(taken))*100)
+two_point_percent
+three_point_percent
+total_point_percent
+```
