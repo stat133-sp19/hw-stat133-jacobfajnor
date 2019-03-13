@@ -26,6 +26,7 @@ court_image <- rasterGrob(
   readJPEG(court_file),
   width = unit(1, "npc"),
   height = unit(1, "npc"))
+# Curry Shot Chart with background image
 curry_shot_chart <- ggplot(data = curry) +
   annotation_custom(court_image, -250, 250, -50, 420) +
   geom_point(aes(x = x, y = y, color = shot_made_flag)) +
@@ -95,6 +96,10 @@ pdf("./images/andre-iguodala-shot-chart.pdf", height = 5, width = 6.5)
 iguodala_shot_chart
 dev.off()
 
+png("./images/stephan-curry-shot-chart.png", res = 72, units = "in", height = 7, width = 8)
+curry_shot_chart
+dev.off()
+
 # Faceted Shot Chart
 gsw_shot_chart <- ggplot(data = data) +
   annotation_custom(court_image, -250, 250, -50, 420) +
@@ -128,3 +133,17 @@ gsw_shot_chart
 dev.off()
 
 ggsave("./images/gsw-shotchart.png", plot = gsw_shotcharts, units = "in", height = 7, width = 8, scale = 3.)
+
+# Effective Shooting Percentage
+# Tables of Effective shooting Percentage.
+shot_data$made <- ifelse(shot_data$shot_made_flag == "shot_yes", 1, 0)
+shot_data$taken <- ifelse(shot_data$shot_made_flag == "shot_yes", 1, 1)
+
+two_point_percent <- shot_data %>% group_by(name) %>% filter(shot_type == "2PT Field Goal") %>% summarize(total = sum(taken), made = sum(made), perc_made = (sum(made)/sum(taken))*100)
+
+three_point_percent <- shot_data %>% group_by(name) %>% filter(shot_type == "3PT Field Goal") %>% summarize(total = sum(taken), made = sum(made), perc_made = (sum(made)/sum(taken))*100)
+
+total_point_percent <- shot_data %>% group_by(name) %>% filter(shot_type == "2PT Field Goal" | shot_type == "3PT Field Goal") %>% summarize(total = sum(taken), made = sum(made), perc_made = (sum(made)/sum(taken))*100)
+two_point_percent
+three_point_percent
+total_point_percent

@@ -1,7 +1,0 @@
----
-title: "Workout 1 Narrative Report"
-author: "Jacob Fajnor"
-output: github_document
----
-
-```{r setup, include=FALSE}
