@@ -1,0 +1,117 @@
+---
+title: "Introduction to Binomial"
+author: "Jacob Fajnor"
+date: "4/30/2019"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+```{r echo = FALSE}
+library(Binomial)
+```
+
+# Binomial
+#### *By Jacob Fajnor*
+
+Probability distributions are essential in analyzing data and interpreting the results. One of the most fundamental probability distributions is the **Binomial** distribution. 
+
+The package "Binomial" contains many tools to help calculate and display binomial random variables and distributions by:
+  + Creating a binomial variable and displaying it's proporties.
+  + Calculating and displaying the probability of a binomial distribution.
+  + Calculating and displaying the cumulative probability of a binomoial distribution. 
+
+## Function: bin_choose()
+
+Suppose we have a set of paramaters, n and k, and we want to know how many combinations of k objects within n we can experience (say number of heads (4) in 10 flips of a coin). We can use bin choose as such:
+
+```{r eval=TRUE}
+# we want the total number of combinations of 4 heads in 5 flips. i.e. HHHHT, THHHH, HTHHH, etc...
+bin_choose(n = 5, k = 4)
+
+# This seems easy enough to count but what if we enlarge the sample size?
+
+bin_choose(n = 20, k = 4)
+```
+
+## Function: bin_probability()
+
+Suppose that an object behaves according to a binomial distribution. What is the probability of a certain number of successes? With the function `bin_probability` we can calculate that probability:
+
+```{r}
+# say we have the same fair coin from the example above, what is the probability that we will achieve 4 heads in 5 attempts? 
+
+bin_probability(trials = 5, prob = .5, success = 4)
+
+# or for larger sample sizes:
+
+bin_probability(trials = 20, prob = .5, success = 4)
+```
+Note that this function gives the probability of *exactly* 4 successes out of 5 and 20 attempts. It is not the probability of *at least* 4 successes. For that we need the next two functions.
+
+## Function: bin_distribution()
+
+Now lets say that for our coin we want to know the probability at every number of successes. We can do this by envoking `bin_distribution` which creates a data frame of probabilites. For example:
+
+```{r}
+# for the same coin:
+
+bin_distribution(trials = 5, prob = .5)
+```
+
+ or
+
+```{r}
+bin_distribution(trials = 20, prob = .5)
+```
+In turn, we can create a visual representation of this data through the method `plot.bindis`. 
+
+```{r}
+dis1 <- bin_distribution(trials = 5, prob = .5)
+plot.bindis(dis1)
+```
+
+```{r}
+dis2 <- bin_distribution(trials = 20, prob = .5)
+plot.bindis(dis2)
+```
+
+### Function: bin_cumulative()
+
+Now lets say that we want to see what the cumulative probability of our coin is. That is to say what is the probability of getting "at least x" successes. To do this we can use `bin_cumulative`. 
+
+```{r}
+bin_cumulative(trials = 5, prob = .5)
+
+```
+or
+```{r}
+bin_cumulative(trials = 20, prob = .5)
+```
+
+We can also use the method `plot.bincum` to create a visual representation.
+
+```{r}
+cumu1 <- bin_cumulative(trials = 5, prob = .5)
+cumu2 <- bin_cumulative(trials = 20, prob = .5)
+plot.bincum(cumu1)
+plot.bincum(cumu2)
+```
+
+### Function: bin_variable()
+
+Now lets say that we want to create a variable that behaves according to a binomial distribution. We can use the funciton `bin_variable` to do so. 
+
+```{r}
+bin_variable(5, .5)
+```
+
+We can also learn more about this variable by storing it as an object and using `summary.binvar` to dig deeper:
+
+```{r}
+binvar <- bin_variable(5,.5)
+summary.binvar(binvar)
+```
+
+These are the main functions in the *"Binomial"* package. Hopefully they help you explore binomial distrbutions in new ways. Enjoy!
