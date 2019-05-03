@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1556914161932.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1042842729",
+    "id" : "FD115EDE",
+    "lastKnownWriteTime" : 1556915501,
+    "last_content_update" : 1556915501,
+    "path" : "C:/Users/Fajnor/Desktop/hw-stat133/Binomial/NAMESPACE",
+    "project_path" : "NAMESPACE",
+    "properties" : {
+        "cursorPosition" : "1,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_namespace"
+}

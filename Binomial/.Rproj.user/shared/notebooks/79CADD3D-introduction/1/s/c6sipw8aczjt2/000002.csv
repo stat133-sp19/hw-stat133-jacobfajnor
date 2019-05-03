@@ -1,0 +1,5 @@
+"0","cumu1 <- bin_cumulative(trials = 5, prob = .5)"
+"0","cumu2 <- bin_cumulative(trials = 20, prob = .5)"
+"0","plot.bincum(cumu1)"
+"1","NULL
+"

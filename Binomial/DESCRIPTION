@@ -1,6 +1,6 @@
 Package: Binomial
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Helps to explore and generate binomial distributions and random varaibles
 Version: 0.1.0
 Author: Jacob Fajnor
 Maintainer: The package maintainer <jacobfajnor@berkeley.edu>

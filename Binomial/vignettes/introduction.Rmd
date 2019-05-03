@@ -69,12 +69,12 @@ In turn, we can create a visual representation of this data through the method `
 
 ```{r}
 dis1 <- bin_distribution(trials = 5, prob = .5)
-plot.bindis(dis1)
+plot(dis1)
 ```
 
 ```{r}
 dis2 <- bin_distribution(trials = 20, prob = .5)
-plot.bindis(dis2)
+plot(dis2)
 ```
 
 ### Function: bin_cumulative()
@@ -95,8 +95,8 @@ We can also use the method `plot.bincum` to create a visual representation.
 ```{r}
 cumu1 <- bin_cumulative(trials = 5, prob = .5)
 cumu2 <- bin_cumulative(trials = 20, prob = .5)
-plot.bincum(cumu1)
-plot.bincum(cumu2)
+plot(cumu1)
+plot(cumu2)
 ```
 
 ### Function: bin_variable()
@@ -111,7 +111,7 @@ We can also learn more about this variable by storing it as an object and using 
 
 ```{r}
 binvar <- bin_variable(5,.5)
-summary.binvar(binvar)
+summary(binvar)
 ```
 
 These are the main functions in the *"Binomial"* package. Hopefully they help you explore binomial distrbutions in new ways. Enjoy!

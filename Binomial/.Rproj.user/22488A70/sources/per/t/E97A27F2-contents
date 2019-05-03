@@ -129,6 +129,7 @@ bin_distribution <- function(trials, prob) {
   class(dat) <- c("bindis", "data.frame")
   return(dat)
 }
+#' @title plot.bindis
 #' @export
 #' @example
 #'
@@ -158,6 +159,7 @@ bin_cumulative <- function(trials, prob){
   class(dat) = c("bincum", "data.frame")
   return(dat)
 }
+#' @title plot.bincum
 #' @export
 #' @example
 #' cumu1 <- bin_cumulative(5, .4)

@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1556913761380.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "519603156",
+    "id" : "A6CA5D33",
+    "lastKnownWriteTime" : 1556645764,
+    "last_content_update" : 1556645764,
+    "path" : "C:/Users/Fajnor/Desktop/hw-stat133/Binomial/tests/testthat/tests.R",
+    "project_path" : "tests/testthat/tests.R",
+    "properties" : {
+        "cursorPosition" : "12,23",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

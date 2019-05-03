@@ -1,10 +1,3 @@
-if (k > n) {
-stop("k cannot be larger than n")
-} else {
-bin_choose <- factorial(n)/(factorial(k)*factorial(n-k))
-}
-return(bin_choose)
-}
 #' @title bin_probability
 #' @description gives the probability of the number of successes within fixed trials of a random variable following a binomial distribution
 #' @param n: the number of total objects
@@ -204,6 +197,14 @@ check_trials(trials)
 kurtosis <- aux_kurtosis(trials, prob)
 return(kurtosis)
 }
+devtools::build_vignettes()
+library(Binomial)
+devtools::build_vignettes()
+devtools::build()
+devtools::install()
+devtools::check()
+devtools::check()
+devtools::build()
 # PRIVATE FUNCTIONS
 # title check_prob
 # description  detetermins wheter a probability is acceptable.
@@ -502,11 +503,10 @@ check_trials(trials)
 kurtosis <- aux_kurtosis(trials, prob)
 return(kurtosis)
 }
-devtools::build_vignettes()
-library(Binomial)
-devtools::build_vignettes()
 devtools::build()
 devtools::install()
 devtools::check()
-devtools::check()
 devtools::build()
+devtools::install()
+devtoo::check()
+devtools::check()
